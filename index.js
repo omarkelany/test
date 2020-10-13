@@ -1,4 +1,6 @@
 const router = require('./controllers/router');
+const dotenv = require('dotenv');
+dotenv.config();
 
 let port = process.env.APP_ENV === 'local' ? (process.env.APP_PORT_LOCAL) : (process.env.APP_PORT_PRODUCTION);
 if (port === undefined){
