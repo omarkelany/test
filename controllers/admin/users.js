@@ -3,8 +3,8 @@ const express = require('express');
 const router = express();
 
 const User = require('../../db/migrations/users');
-const responses = require('../../responses');
-const middlewares = require('../../middlewares');
+const responses = require('../responses');
+const middlewares = require('../middlewares');
 
 router.post('/', middlewares.auth, async (req, res) => {
     if (req.body.username && req.body.email){
