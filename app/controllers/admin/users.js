@@ -2,9 +2,9 @@ const express = require('express');
 
 const router = express();
 
-const User = require('../../db/migrations/users');
-const responses = require('../responses');
-const middlewares = require('../middlewares');
+const User = require('../../../db/migrations/users');
+const responses = require('../../responses');
+const middlewares = require('../../middlewares');
 const crypto = require("crypto");
 
 router.post('/', middlewares.auth, async (req, res) => {
