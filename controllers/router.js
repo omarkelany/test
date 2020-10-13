@@ -4,6 +4,8 @@ const router = express();
 
 router.use(express.json());
 
-module.exports = router;
+const admin = require('./admin/router');
 
-const users = require('./users');
+router.use('/admin', admin);
+
+module.exports = router;

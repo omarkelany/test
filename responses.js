@@ -1,5 +1,8 @@
 module.exports = {
-    doneCreateItem: function (item) {
-        return {status: 'ok', code: 200, message: 'Done create Item', data: item};
-    }
+    doneCreateItem: (item) => {
+        return {status: 'OK', code: 200, message: 'Done create Item', data: item};
+    },
+    badRequest: (errors) => {
+        return {status: 'Bad Request', code: 400, message: 'Something went wrong', errors: errors};
+    },
 };
