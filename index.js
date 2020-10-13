@@ -1,4 +1,4 @@
-const router = require('./app/controllers/router');
+const router = require('./routes/api/router');
 const dotenv = require('dotenv');
 dotenv.config();
 
