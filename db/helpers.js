@@ -1,11 +1,11 @@
-const { Sequelize, Model, DataTypes, sequelize } = require('./db');
-const queryInterface = sequelize.getQueryInterface();
+const db = require('./db');
+const queryInterface = db.sequelize.getQueryInterface();
 const User = require('./migrations/users');
+// const Student = require('./migrations/students');
 const users = require('./seeders/users');
 const dotenv = require('dotenv');
 dotenv.config();
 
-// const students = require('./migrations/students');
 module.exports.migrate = async () => {
     const drop = process.env.DROP_ALL_TABLES || true;
     if (drop){
@@ -14,7 +14,7 @@ module.exports.migrate = async () => {
         console.log('\n----------END DROP ALL TABLE----------\n');
     }
     console.log('\n----------START MIGRATIONS----------\n');
-    await sequelize.sync();
+    await db.sequelize.sync();
     console.log('\n----------END MIGRATIONS----------\n');
 };
 
