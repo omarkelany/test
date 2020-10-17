@@ -4,8 +4,8 @@ const router = express();
 
 router.use(express.json());
 
-const admin = require('./admin/router');
-
-router.use('/admin', admin);
+router.use('/admin', require('./admin'));
+router.use('/auth', require('./auth'));
+router.use('/', require('./visitor'));
 
 module.exports = router;
